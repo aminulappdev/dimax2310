@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});
 
-  @override
+  @override 
   State<LocationScreen> createState() => _LocationScreenState();
 }
 

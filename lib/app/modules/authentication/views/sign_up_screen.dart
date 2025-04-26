@@ -20,12 +20,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16.0.h),
+        padding: EdgeInsets.symmetric(horizontal:  16.0.h),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              heightBox24,
+              heightBox30,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   )
                 ],
               ),
-              LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 45,),
+              LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 80,),
               heightBox8,
               Container(
                 height: 110.h,

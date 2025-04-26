@@ -1,4 +1,5 @@
 import 'package:dimax2310/app/modules/authentication/views/location_page.dart';
+import 'package:dimax2310/app/modules/authentication/views/main_buttom_bar_screen.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
@@ -57,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 backgroundColor: AppColors.buttonBackgroundColor,
                 name: 'Anmelden',
                 ontap: () {
-                  Get.to(LocationScreen());
+                  Get.to(MainNavigationBar());
                 },
               ),
               heightBox12,
