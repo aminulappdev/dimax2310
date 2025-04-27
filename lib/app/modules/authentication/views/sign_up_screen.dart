@@ -1,4 +1,4 @@
-import 'package:dimax2310/app/modules/authentication/views/sign_in_screen.dart';
+import 'package:dimax2310/app/modules/authentication/views/location_page.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
@@ -20,7 +20,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal:  16.0.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.0.h),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +42,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   )
                 ],
               ),
-              LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 80,),
+              LogoContainer(
+                logoPath: AssetsPath.logo1white,
+                logoRadius: 80,
+              ),
               heightBox8,
               Container(
                 height: 110.h,
@@ -64,30 +67,79 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     children: [
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Vorname'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Nachname'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Geburtstag'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Geschlecht'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Adresse'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Email'),
                       ),
                       heightBox16,
                       TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (String? value) {
+                          if (value!.isEmpty) {
+                            return 'Enter value';
+                          }
+                          return null;
+                        },
                         decoration: InputDecoration(hintText: 'Password'),
                       ),
                       heightBox16,
@@ -100,9 +152,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 backgroundColor: AppColors.buttonBackgroundColor,
                 name: 'Jetzt registrieren',
                 ontap: () {
-                  Get.to(SignInScreen());
+                  Get.to(LocationScreen());
                 },
-              )
+              ),
+              heightBox100
             ],
           ),
         ),

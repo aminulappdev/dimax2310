@@ -10,5 +10,12 @@ class AssetsPath {
   static const String google = '$imagePath/google.png';
   static const String fb = '$imagePath/fb.png';
   static const String x = '$imagePath/x.png';
+  static const String food = '$imagePath/food.jpg';
+  static const String city = '$imagePath/city.jpg';
+  static const String mordern = '$imagePath/mordern.jpg';
+  static const String rustical = '$imagePath/rustical.jpg';
+  static const String party = '$imagePath/party.jpg';
+  static const String slow = '$imagePath/slow.jpg';
+  static const String date = '$imagePath/date.jpg';
  
 }

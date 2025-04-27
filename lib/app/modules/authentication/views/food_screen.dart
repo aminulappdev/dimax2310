@@ -1,4 +1,4 @@
-import 'package:dimax2310/app/modules/authentication/views/lifestyle_screen.dart';
+import 'package:dimax2310/app/modules/authentication/views/sign_in_screen.dart';
 import 'package:dimax2310/app/modules/authentication/widgets/selected_card.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class LocationScreen extends StatefulWidget {
-  const LocationScreen({super.key});
+class FoodScreen extends StatefulWidget {
+  const FoodScreen({super.key});
 
-  @override
-  State<LocationScreen> createState() => _LocationScreenState();
+  @override 
+  State<FoodScreen> createState() => _FoodScreenState();
 }
 
-class _LocationScreenState extends State<LocationScreen> {
+class _FoodScreenState extends State<FoodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +22,7 @@ class _LocationScreenState extends State<LocationScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           heightBox100,
-          LogoContainer(
-            logoPath: AssetsPath.logo1white,
-            logoRadius: 80,
-          ),
+          LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 80,),
           heightBox12,
           SizedBox(
               width: 250,
@@ -36,18 +33,18 @@ class _LocationScreenState extends State<LocationScreen> {
               )),
           heightBox12,
           SelectedCard(
-            op1Name: 'City life',
-            op1ImagePath: AssetsPath.city,
+            op1Name: 'Fast Food',
+            op1ImagePath: AssetsPath.food,
             op1Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                SignInScreen(),
               );
             },
-            op2Name: 'Country side',
-            op2ImagePath: AssetsPath.village,
+            op2Name: 'Slow Food',
+            op2ImagePath: AssetsPath.slow,
             op2Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                SignInScreen(),
               );
             },
           )

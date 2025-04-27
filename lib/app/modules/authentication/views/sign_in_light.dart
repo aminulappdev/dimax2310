@@ -9,19 +9,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignInScreenLight extends StatefulWidget {
+  const SignInScreenLight({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignInScreenLight> createState() => _SignInScreenLightState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignInScreenLightState extends State<SignInScreenLight> {
 
   bool _obscureConfirmText = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondaryBackgroundColor,
       body: Padding(
         padding: EdgeInsets.all(16.0.h),
         child: SingleChildScrollView(
@@ -30,7 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
             children: [
               heightBox100,
               LogoContainer(
-                logoPath: AssetsPath.logo2white,
+                logoPath: AssetsPath.logo2black,
                 logoRadius: 180,
               ),
               heightBox30,
@@ -48,6 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             return null;
                           },
                         decoration: InputDecoration(
+                            fillColor: Colors.white,
                             prefixIcon: Icon(Icons.email),
                             hintText: 'example@gmail.com'),
                       ),
@@ -62,6 +64,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           },
                           obscureText: _obscureConfirmText,
                           decoration: InputDecoration(
+                            fillColor: Colors.white,
                             prefixIcon: Icon(Icons.lock_outline_rounded),
                             errorStyle: TextStyle(
                                 color: const Color.fromARGB(255, 237, 82, 82)),
@@ -89,8 +92,9 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               heightBox20,
               CustomElevatedButton(
-                backgroundColor: AppColors.buttonBackgroundColor,
+                backgroundColor: AppColors.primaryBackgroundColor,
                 name: 'Anmelden',
+                textColor: Colors.white,
                 ontap: () {
                   Get.to(MainNavigationBar());
                 },
@@ -103,7 +107,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   children: [
                     Text(
                       'Noch Rein Konto?',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black),
                     ),
                   
                     TextButton(
@@ -113,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: Text(
                         
                         'Registcigcen',
-                        style: TextStyle(color: Colors.white, decoration: TextDecoration.underline, decorationColor: Colors.white),
+                        style: TextStyle(color: AppColors.primaryBackgroundColor, decoration: TextDecoration.underline, decorationColor: AppColors.primaryBackgroundColor),
                       ),
                     ),
                   ],
@@ -129,7 +133,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Text(
 
                       'Weiter mit',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black),
                     ),
                     widthBox14,
                     Row(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomElevatedButton extends StatelessWidget {
+  final Color textColor;
   final Color backgroundColor;
   final String name;
   final VoidCallback ontap;
@@ -10,7 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.backgroundColor,
     required this.name,
-    required this.ontap,
+    required this.ontap,  this.textColor = Colors.black,
   });
 
   @override
@@ -26,7 +27,7 @@ class CustomElevatedButton extends StatelessWidget {
             child: Text(
           name,
           style: TextStyle(
-              fontSize: 14, color: Colors.black, fontWeight: FontWeight.w600),
+              fontSize: 14, color: textColor, fontWeight: FontWeight.w600),
         )),
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:dimax2310/app/modules/authentication/views/lifestyle_screen.dart';
+import 'package:dimax2310/app/modules/authentication/views/night_screen.dart';
 import 'package:dimax2310/app/modules/authentication/widgets/selected_card.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class LocationScreen extends StatefulWidget {
-  const LocationScreen({super.key});
+class LifeStyleScreen extends StatefulWidget {
+  const LifeStyleScreen({super.key});
 
-  @override
-  State<LocationScreen> createState() => _LocationScreenState();
+  @override 
+  State<LifeStyleScreen> createState() => _LifeStyleScreenState();
 }
 
-class _LocationScreenState extends State<LocationScreen> {
+class _LifeStyleScreenState extends State<LifeStyleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +22,7 @@ class _LocationScreenState extends State<LocationScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           heightBox100,
-          LogoContainer(
-            logoPath: AssetsPath.logo1white,
-            logoRadius: 80,
-          ),
+          LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 80,),
           heightBox12,
           SizedBox(
               width: 250,
@@ -36,18 +33,18 @@ class _LocationScreenState extends State<LocationScreen> {
               )),
           heightBox12,
           SelectedCard(
-            op1Name: 'City life',
-            op1ImagePath: AssetsPath.city,
+            op1Name: 'Modern',
+            op1ImagePath: AssetsPath.mordern,
             op1Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                NightScreen(),
               );
             },
-            op2Name: 'Country side',
-            op2ImagePath: AssetsPath.village,
+            op2Name: 'Rustical',
+            op2ImagePath: AssetsPath.rustical,
             op2Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                NightScreen(),
               );
             },
           )

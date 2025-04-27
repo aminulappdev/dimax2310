@@ -1,4 +1,4 @@
-import 'package:dimax2310/app/modules/authentication/views/lifestyle_screen.dart';
+import 'package:dimax2310/app/modules/authentication/views/food_screen.dart';
 import 'package:dimax2310/app/modules/authentication/widgets/selected_card.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class LocationScreen extends StatefulWidget {
-  const LocationScreen({super.key});
+class NightScreen extends StatefulWidget {
+  const NightScreen({super.key});
 
-  @override
-  State<LocationScreen> createState() => _LocationScreenState();
+  @override 
+  State<NightScreen> createState() => _NightScreenState();
 }
 
-class _LocationScreenState extends State<LocationScreen> {
+class _NightScreenState extends State<NightScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +22,7 @@ class _LocationScreenState extends State<LocationScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           heightBox100,
-          LogoContainer(
-            logoPath: AssetsPath.logo1white,
-            logoRadius: 80,
-          ),
+          LogoContainer(logoPath: AssetsPath.logo1white,logoRadius: 80,),
           heightBox12,
           SizedBox(
               width: 250,
@@ -35,19 +32,19 @@ class _LocationScreenState extends State<LocationScreen> {
                 textAlign: TextAlign.center,
               )),
           heightBox12,
-          SelectedCard(
-            op1Name: 'City life',
-            op1ImagePath: AssetsPath.city,
+         SelectedCard(
+            op1Name: 'Party Night',
+            op1ImagePath: AssetsPath.party,
             op1Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                FoodScreen(),
               );
             },
-            op2Name: 'Country side',
-            op2ImagePath: AssetsPath.village,
+            op2Name: 'Date Night',
+            op2ImagePath: AssetsPath.date,
             op2Ontap: () {
               Get.to(
-                LifeStyleScreen(),
+                FoodScreen(),
               );
             },
           )

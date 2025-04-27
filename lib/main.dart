@@ -1,4 +1,4 @@
-import 'package:dimax2310/app/modules/authentication/views/sign_up_screen.dart';
+import 'package:dimax2310/app/modules/authentication/views/sign_in_screen.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           scaffoldBackgroundColor: AppColors.primaryBackgroundColor,
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
 
           )
         ),
-        home: SignUpScreen(),
+        home: SignInScreen(),
       ),
     );
   }
