@@ -39,24 +39,21 @@ class _PeopleOnboardingScreenState extends State<PeopleOnboardingScreen> {
     AssetsPath.village,
     AssetsPath.village,
     AssetsPath.party,
-
- 
   ];
 
   final ScrollController _scrollController = ScrollController();
-
   final Random random = Random();
-    @override
+  
+  // Store random height for each item
+  late List<double> heights;
+
+  @override
   void initState() {
-    _movetoNewScreen();
     super.initState();
+    // Generate random heights when the widget is initialized
+    heights = List.generate(allImages.length, (index) => 120 + random.nextInt(80).toDouble());
   }
 
-  Future<void> _movetoNewScreen() async {
-    await Future.delayed(const Duration(seconds: 3));
-    Get.to(ChatListScreen());
-  }
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,18 +107,20 @@ class _PeopleOnboardingScreenState extends State<PeopleOnboardingScreen> {
                       ],
                     ),
                     heightBox8,
-                    SizedBox(
-                      height: 420,
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      height: 420, // Fixed height for grid
                       child: MasonryGridView.count(
                         padding: EdgeInsets.zero,
                         controller: _scrollController,
-                        crossAxisCount: 3,
+                        physics: NeverScrollableScrollPhysics(), // Scroll bondho
+                        crossAxisCount: 3, // 3 columns
                         mainAxisSpacing: 6,
                         crossAxisSpacing: 6,
-                        itemCount: 6,
+                        itemCount: 9,
                         itemBuilder: (context, index) {
-                          double randomHeight =
-                              (150 + random.nextInt(150)).toDouble();
                           return InkWell(
                             onTap: () {
                               Get.to(DetailsScreen());
@@ -129,9 +128,12 @@ class _PeopleOnboardingScreenState extends State<PeopleOnboardingScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               child: Container(
+                                height: heights[index], // Set random height for each image
                                 color: Colors.grey.shade300,
-                                height: randomHeight,
-                                child: Image(image: AssetImage(allImages[index]),fit: BoxFit.fill,)
+                                child: Image.asset(
+                                  allImages[index],
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           );
@@ -165,4 +167,3 @@ class _PeopleOnboardingScreenState extends State<PeopleOnboardingScreen> {
     );
   }
 }
-

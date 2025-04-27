@@ -1,3 +1,4 @@
+import 'package:dimax2310/app/modules/home/views/details_screen.dart';
 import 'package:dimax2310/app/modules/home/widgets/circular_status_widget.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
@@ -5,7 +6,10 @@ import 'package:dimax2310/app/utils/responsive_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'dart:math';
+
+import 'package:get/get_core/src/get_main.dart';
 
 class HomeScreenTwo extends StatefulWidget {
   const HomeScreenTwo({super.key});
@@ -60,96 +64,101 @@ class _HomeScreenTwoState extends State<HomeScreenTwo> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Container(
-                      height: 400,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(AssetsPath.food),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 196, 195, 193)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Container(
-                                height: 150,
-                                width: MediaQuery.of(context).size.width,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: AppColors.secondaryBackgroundColor,),
-                                child: Padding(
-                                  padding: EdgeInsets.all(10.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            '17, February',
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                          StarRating(
-                                            rating: 3.5,
-                                            filledIcon: Icons.star,
-                                            halfFilledIcon: Icons.star,
-                                            emptyIcon:
-                                                Icons.star_border_outlined,
-                                            color: AppColors
-                                                .primaryBackgroundColor,
-                                            borderColor: Colors.grey,
-                                            onRatingChanged: (rating) => () {},
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 20,
-                                            backgroundImage:
-                                                AssetImage(AssetsPath.village),
-                                          ),
-                                          widthBox8,
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text(
-                                                'Sam Courtlan',
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              ),
-                                              Text(
-                                                'Tocco stand in Hamburg',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w500),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        'Leckerste Tacos ever!! Must try für alle Tocco-Liebhaber Günstig und auch in vegan — mehr',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ],
-                                  ),
-                                )),
-                          ],
-                        ),
-                      )),
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(DetailsScreen());
+                    },
+                    child: Container(
+                        height: 400,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(AssetsPath.food),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(255, 196, 195, 193)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                  height: 150,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: AppColors.secondaryBackgroundColor,),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              '17, February',
+                                              style: TextStyle(fontSize: 12),
+                                            ),
+                                            StarRating(
+                                              rating: 3.5,
+                                              filledIcon: Icons.star,
+                                              halfFilledIcon: Icons.star,
+                                              emptyIcon:
+                                                  Icons.star_border_outlined,
+                                              color: AppColors
+                                                  .primaryBackgroundColor,
+                                              borderColor: Colors.grey,
+                                              onRatingChanged: (rating) => () {},
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 20,
+                                              backgroundImage:
+                                                  AssetImage(AssetsPath.village),
+                                            ),
+                                            widthBox8,
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  'Sam Courtlan',
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                                Text(
+                                                  'Tocco stand in Hamburg',
+                                                  style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Text(
+                                          'Leckerste Tacos ever!! Must try für alle Tocco-Liebhaber Günstig und auch in vegan — mehr',
+                                          style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        )),
+                  ),
                 );
               },
             ))
