@@ -1,6 +1,4 @@
-
 import 'package:dimax2310/app/modules/people/views/chat_list_screen.dart';
-import 'package:dimax2310/app/modules/people/views/message_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

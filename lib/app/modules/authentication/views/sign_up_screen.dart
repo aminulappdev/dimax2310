@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:dimax2310/app/modules/authentication/views/location_page.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
 import 'package:dimax2310/app/widgets/custom_elevated_button.dart';
+import 'package:dimax2310/app/widgets/image_picker.dart';
 import 'package:dimax2310/app/widgets/logo_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +19,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  File? profileImage;
+  File? coverImage;
+  final ImagePickerHelper _imagePickerHelper = ImagePickerHelper();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,18 +54,58 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 logoRadius: 80,
               ),
               heightBox8,
-              Container(
-                height: 110.h,
-                width: 110.w,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    // image: DecorationImage(image: AssetImage(AssetsPath.avatar),fit: BoxFit.fill)
-                    color: AppColors.buttonBackgroundColor),
-                child: Icon(
-                  Icons.person_outline_rounded,
-                  size: 50,
-                  color: const Color.fromARGB(255, 42, 61, 46),
-                ),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    height: 110.h,
+                    width: 110.w,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.buttonBackgroundColor),
+                    child: CircleAvatar(
+                      radius: 40.r,
+                      child: profileImage != null
+                          ? ClipOval(
+                              child: Image.file(
+                                profileImage!,
+                                width: 100.w,
+                                height: 100.h,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          : Container(),
+                    ),
+                  ),
+                  Positioned(
+                    
+                    right: 0,
+                  
+                    bottom: -10,
+                    child: IconButton(
+                      onPressed: () {
+                        _imagePickerHelper.showAlertDialog(
+                          context,
+                          (File pickedImage) {
+                            setState(
+                              () {
+                                profileImage = pickedImage;
+                              },
+                            );
+                          },
+                        );
+                      },
+                      icon: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 20,
+                        child: Icon(
+                          Icons.person_outline_outlined,
+                          size: 30,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               heightBox30,
               Form(
