@@ -1,5 +1,4 @@
 import 'package:dimax2310/app/modules/home/views/details_screen.dart';
-import 'package:dimax2310/app/modules/people/views/chat_list_screen.dart';
 import 'package:dimax2310/app/utils/app_colors.dart';
 import 'package:dimax2310/app/utils/assets_path.dart';
 import 'package:dimax2310/app/utils/responsive_size.dart';
