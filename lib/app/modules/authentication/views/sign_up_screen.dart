@@ -22,7 +22,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   File? profileImage;
   File? coverImage;
   final ImagePickerHelper _imagePickerHelper = ImagePickerHelper();
-
+  final TextEditingController nameController = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,6 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: nameController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                         validator: (String? value) {
                           if (value!.isEmpty) {
